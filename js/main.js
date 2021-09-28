@@ -8,6 +8,6 @@ window.onload = function () {
     parent: 'div-tag-name',
     scene: [SceneMain], // game screens for the game
   };
-
+  model = new Model();
   game = new Phaser.Game(config);
 };

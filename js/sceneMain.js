@@ -8,6 +8,8 @@ class SceneMain extends Phaser.Scene {
   }
   create() {
     // define our objects
+    model.score = 100;
+
     let face = this.add.sprite(0, 0, 'face');
     Align.center(face);
   }
