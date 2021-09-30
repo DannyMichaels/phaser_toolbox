@@ -56,4 +56,16 @@ class AlignGrid {
 
     this.graphics.strokePath();
   }
+
+  placeAt(xx, yy, obj) {
+    // calculate position based upon the cellWidth and cellHeight
+    const halfOfCellWidth = this.cellWidth / 2;
+    const halfOfCellHeight = this.cellHeight / 2;
+
+    let x2 = this.cellWidth * xx + halfOfCellWidth;
+    let y2 = this.cellHeight * yy + halfOfCellHeight;
+
+    obj.x = x2;
+    obj.y = y2;
+  }
 }

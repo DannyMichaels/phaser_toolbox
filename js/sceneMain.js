@@ -10,19 +10,19 @@ class SceneMain extends Phaser.Scene {
     // define our objects
     emitter = new Phaser.Events.EventEmitter();
 
-    model.score = 100;
+    // model.score = 100;
     controller = new Controller();
 
-    this.scoreBox = new ScoreBox({ scene: this });
-    this.scoreBox.x = game.config.width / 2;
-    this.scoreBox.y = 50; // 50px down from y 0
-
-    let face = this.add.sprite(0, 0, 'face');
-    Align.center(face);
+    // this.scoreBox = new ScoreBox({ scene: this });
+    // this.scoreBox.x = game.config.width / 2;
+    // this.scoreBox.y = 50; // 50px down from y 0
 
     let gridConfig = { rows: 5, cols: 5, scene: this };
     let alignGrid = new AlignGrid(gridConfig);
     alignGrid.show();
+
+    this.face = this.add.sprite(0, 0, 'face');
+    alignGrid.placeAt(2, 2, this.face);
   }
   update() {
     // constant running loop
