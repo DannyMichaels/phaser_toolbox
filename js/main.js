@@ -2,6 +2,7 @@ var game; // game is global object
 var model;
 var emitter;
 var G;
+var controller;
 
 window.onload = function () {
   var config = {
