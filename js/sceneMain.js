@@ -19,6 +19,10 @@ class SceneMain extends Phaser.Scene {
 
     let face = this.add.sprite(0, 0, 'face');
     Align.center(face);
+
+    let gridConfig = { rows: 5, cols: 5, scene: this };
+    let alignGrid = new AlignGrid(gridConfig);
+    alignGrid.show();
   }
   update() {
     // constant running loop
