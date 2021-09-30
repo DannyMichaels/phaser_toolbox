@@ -68,4 +68,28 @@ class AlignGrid {
     obj.x = x2;
     obj.y = y2;
   }
+
+  placeAtIndex(index, obj) {
+    let yy = Math.floor(index / this.config.cols);
+
+    //  get the x position by subtracting the row times the number of columns
+    let xx = index - yy * this.config.cols;
+
+    this.placeAt(xx, yy, obj);
+  }
+
+  //  shows the numbers in each cell for placeAtIndex value.
+  showNumbers() {
+    let count = 0;
+    this.show();
+
+    for (let row = 0; row < this.config.rows; row++) {
+      for (let column = 0; column < this.config.cols; column++) {
+        let numText = this.scene.add.text(0, 0, count, { color: '#ff0000' }); // x,y, text, css
+        numText.setOrigin(0.5, 0.5); // place at center of cell
+        this.placeAtIndex(count, numText);
+        count++;
+      }
+    }
+  }
 }
