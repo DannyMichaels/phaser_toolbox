@@ -26,6 +26,7 @@ class SceneMain extends Phaser.Scene {
     this.face = this.add.sprite(0, 0, 'face');
     // alignGrid.placeAt(2, 2, this.face); // center
     alignGrid.placeAtIndex(16, this.face);
+    Align.scaleToGameWidth(this.face, 0.2); // obj, percent
   }
   update() {
     // constant running loop

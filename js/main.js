@@ -4,6 +4,8 @@ var emitter;
 var G;
 var controller;
 
+// https://phasergames.com/phaser-3-snippets/phaser-3-starter-snippets/
+
 window.onload = function () {
   // detect mobile device
   // if text includes Mobile
