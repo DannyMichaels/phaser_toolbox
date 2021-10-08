@@ -6,10 +6,11 @@ class SceneMain extends Phaser.Scene {
     // load our images or sounds
     // this.load.image('face', 'images/face.png');
     this.load.image('button1', 'images/ui/buttons/round/1.png');
+    this.load.image('button2', 'images/ui/buttons/round/5.png');
   }
   create() {
     // define our objects
-    // emitter = new Phaser.Events.EventEmitter();
+    emitter = new Phaser.Events.EventEmitter();
     // // model.score = 100;
     // controller = new Controller();
     // // this.scoreBox = new ScoreBox({ scene: this });
@@ -29,9 +30,25 @@ class SceneMain extends Phaser.Scene {
       scene: this,
       key: 'button1',
       text: 'Press ME!',
-      x: 100,
+      x: 240,
       y: 100,
+      event: 'BUTTON_PRESSED',
     });
+
+    let flatButton2 = new FlatButton({
+      scene: this,
+      key: 'button2',
+      text: 'Press ME!',
+      x: 240,
+      y: 300,
+      event: 'BUTTON_PRESSED',
+    });
+
+    emitter.on('BUTTON_PRESSED', this.buttonPressed, this);
+  }
+
+  buttonPressed() {
+    console.log('button pressed');
   }
   update() {
     // constant running loop
