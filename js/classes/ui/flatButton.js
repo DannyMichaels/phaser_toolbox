@@ -19,7 +19,11 @@ class FlatButton extends Phaser.GameObjects.Container {
     this.add(this.background);
 
     if (config.text) {
-      this.text1 = this.scene.add.text(0, 0, config.text);
+      if (config.textConfig) {
+        this.text1 = this.scene.add.text(0, 0, config.text, config.textConfig);
+      } else {
+        this.text1 = this.scene.add.text(0, 0, config.text);
+      }
       this.text1.setOrigin(0.5, 0.5);
       this.add(this.text1);
     }
@@ -41,6 +45,10 @@ class FlatButton extends Phaser.GameObjects.Container {
   }
 
   pressed() {
-    emitter.emit(this.config.event);
+    if (this.config.params) {
+      emitter.emit(this.config.event, this.config.params);
+    } else {
+      emitter.emit(this.config.event);
+    }
   }
 }

@@ -26,30 +26,35 @@ class SceneMain extends Phaser.Scene {
     // alignGrid.placeAtIndex(16, this.face);
     // Align.scaleToGameWidth(this.face, 0.2); // obj, percent
 
+    let fireText = { color: 'black', fontSize: 30 };
     let flatButton = new FlatButton({
       scene: this,
       key: 'button1',
-      text: 'Press ME!',
+      text: 'Fire!',
       x: 240,
       y: 100,
       event: 'BUTTON_PRESSED',
+      params: 'FIRE_LASERS',
+      textConfig: fireText,
     });
 
     let flatButton2 = new FlatButton({
       scene: this,
       key: 'button2',
-      text: 'Press ME!',
+      text: 'Destruct!',
       x: 240,
       y: 300,
       event: 'BUTTON_PRESSED',
+      params: 'SELF_DESTRUCT',
     });
 
     emitter.on('BUTTON_PRESSED', this.buttonPressed, this);
   }
 
-  buttonPressed() {
-    console.log('button pressed');
+  buttonPressed(params) {
+    console.log(params);
   }
+
   update() {
     // constant running loop
   }
