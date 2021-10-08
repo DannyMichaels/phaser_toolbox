@@ -5,7 +5,7 @@ class SceneMain extends Phaser.Scene {
   preload() {
     // load our images or sounds
     // this.load.image('face', 'images/face.png');
-    this.load.image('button1', 'images/ui/buttons/flat/1.png');
+    this.load.image('button1', 'images/ui/buttons/round/1.png');
   }
   create() {
     // define our objects
